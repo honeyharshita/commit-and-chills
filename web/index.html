@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Precedent | AP exception intelligence</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Precedent home">
+        <span class="brand-mark">P</span>
+        <span><strong>Precedent</strong><small>AP exception intelligence</small></span>
+      </a>
+      <div class="status-pill"><span class="status-dot"></span><span id="healthText">Checking backend</span></div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Decision memory / control room</p>
+        <h1>Rules your team<br><em>should not have to repeat.</em></h1>
+        <p class="hero-copy">Replay invoice exceptions and watch reviewer precedent turn repeated escalations into accountable, cited decisions.</p>
+      </div>
+      <div class="hero-note"><span class="note-icon">+</span><span>Policy limit is enforced before memory or model output.</span></div>
+    </section>
+
+    <section class="control-bar" aria-label="Evaluation controls">
+      <div class="control-copy"><span class="live-kicker">OFFLINE DEMO</span><strong>Run a seeded replay</strong><span>Same stream. Same agent. Different memory.</span></div>
+      <label>Invoices<select id="invoiceCount"><option value="20">20 / smoke test</option><option value="50">50 / short replay</option><option value="150" selected>150 / full replay</option></select></label>
+      <label>Seed<input id="seed" type="number" value="7" min="1"></label>
+      <button id="runButton" class="run-button"><span>Run evaluation</span><span class="arrow">&#8594;</span></button>
+    </section>
+
+    <div id="error" class="error" role="alert" hidden></div>
+    <section class="metrics" aria-live="polite">
+      <article class="metric-card metric-accent"><span class="metric-label">Memory lift</span><strong id="lift">--</strong><span class="metric-foot">local precedent vs no memory</span></article>
+      <article class="metric-card"><span class="metric-label">Local memory</span><strong id="localCorrect">--</strong><span class="metric-foot">correct autonomous resolutions</span></article>
+      <article class="metric-card"><span class="metric-label">Wrong auto-resolutions</span><strong id="wrong">--</strong><span class="metric-foot">guardrail target: zero</span></article>
+      <article class="metric-card"><span class="metric-label">Policy breaches</span><strong id="breaches">--</strong><span class="metric-foot">invoices above Rs 5 lakh</span></article>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="panel chart-panel">
+        <div class="panel-heading"><div><p class="eyebrow">Learning curve</p><h2>Memory earns autonomy</h2></div><span class="legend"><i></i> local memory <b></b> no memory</span></div>
+        <div class="chart-wrap"><svg id="chart" viewBox="0 0 760 260" role="img" aria-label="Learning curve comparison"></svg><div id="chartEmpty" class="chart-empty">Run an evaluation to see the curve.</div></div>
+        <div class="chart-caption"><span>Early stream</span><span>Contract change / correction</span><span>Later stream</span></div>
+      </article>
+      <article class="panel principle-panel">
+        <p class="eyebrow">Operating principles</p><h2>Autonomy, with receipts.</h2>
+        <div class="principle"><span>01</span><div><strong>Recall the vendor</strong><p>Only matching vendor and exception precedent can influence a decision.</p></div></div>
+        <div class="principle"><span>02</span><div><strong>Cite the source</strong><p>No recalled citation means the agent escalates to a human.</p></div></div>
+        <div class="principle"><span>03</span><div><strong>Respect policy</strong><p>Invoices above Rs 5,00,000 always need controller sign-off.</p></div></div>
+      </article>
+    </section>
+
+    <section class="panel table-panel">
+      <div class="panel-heading"><div><p class="eyebrow">Decision stream</p><h2>Recent invoice outcomes</h2></div><span id="streamMeta" class="muted">Waiting for replay</span></div>
+      <div class="table-scroll"><table><thead><tr><th>Invoice</th><th>Vendor</th><th>Exception</th><th>Agent</th><th>Ground truth</th><th>Evidence</th></tr></thead><tbody id="rows"><tr><td colspan="6" class="empty-row">Your latest replay will appear here.</td></tr></tbody></table></div>
+    </section>
+    <footer><span>PRECEDENT / AP CONTROL ROOM</span><span>Local backend on :8000</span></footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
