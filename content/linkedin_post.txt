@@ -1,0 +1,19 @@
+Your AP agent isn't dumb. It's amnesiac.
+
+It escalates the same Sunrise freight invoice for the 40th time, unaware the controller said yes 39 times.
+
+I built Precedent to fix that, using Hindsight agent memory:
+
+- Retain every reviewer resolution, timestamped
+- Recall vendor-specific precedent before each decision
+- No citation, no autonomy: no cited precedent means escalate
+- Policy limits enforced in code, so memory can't outrank them
+
+Before: every exception goes to a human.
+After: known patterns resolve themselves, and when a vendor's contract changes, corrected precedent replaces the old rule.
+
+Hindsight over a plain vector store handled updates and timing for me.
+
+Code: https://github.com/honeyharshita/commit-and-chill | Built with @Code.in
+
+#AIAgents #AgentMemory #Hindsight #LLM
